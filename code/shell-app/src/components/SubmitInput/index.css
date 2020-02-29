@@ -1,0 +1,16 @@
+.submit-input {
+  width: fit-content;
+  color: white !important;
+}
+
+.ant-input {
+  color: white !important;
+}
+
+.ant-input {
+  background-color: transparent !important;
+}
+
+.ant-input-search-button {
+  border: 1px solid #d9d9d9 !important;
+}

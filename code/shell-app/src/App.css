@@ -1,0 +1,19 @@
+.shell-header {
+  background-color: rgb(9, 36, 58) !important;
+  color: white !important;
+  height: 8% !important;
+  font-size: 12px;
+}
+
+h1 {
+  color: white !important;
+  font-size: 24px;
+}
+
+.content-body {
+  height: 84% !important;
+}
+
+.small-text {
+  font-size: 12px;
+}
