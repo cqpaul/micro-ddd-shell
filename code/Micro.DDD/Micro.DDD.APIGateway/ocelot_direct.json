@@ -1,0 +1,36 @@
+{
+  "ReRoutes": [
+    {
+      "DownstreamPathTemplate": "/api/{url}",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [{
+        "Host": "docker.for.mac.host.internal",
+        "Port": 5001
+      }],
+      "UpstreamPathTemplate": "/CrawlerManagerService/{url}",
+      "UpstreamHttpMethod": ["Get", "Post", "OPTIONS"]
+    },
+    {
+      "DownstreamPathTemplate": "/api/{url}",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [{
+        "Host": "docker.for.mac.host.internal",
+        "Port": 5002
+      }],
+      "UpstreamPathTemplate": "/ReportingService/{url}",
+      "UpstreamHttpMethod": ["Get", "POST", "OPTIONS"]
+    },
+    {
+      "DownstreamPathTemplate": "/{url}",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [{
+        "Host": "docker.for.mac.host.internal",
+        "Port": 5003
+      }],
+      "UpstreamPathTemplate": "/MessagingService/{url}",
+      "UpstreamHttpMethod": ["Get", "POST", "OPTIONS"]
+    }
+  ],
+  "GlobalConfiguration": {
+  }
+}

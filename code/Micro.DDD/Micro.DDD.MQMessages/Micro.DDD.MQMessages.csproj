@@ -1,0 +1,12 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <TargetFramework>netcoreapp3.0</TargetFramework>
+        <RootNamespace>Micro.DDD.Messages</RootNamespace>
+    </PropertyGroup>
+
+    <ItemGroup>
+      <PackageReference Include="EasyNetQ" Version="3.7.1" />
+    </ItemGroup>
+
+</Project>

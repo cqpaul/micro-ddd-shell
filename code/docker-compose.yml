@@ -1,0 +1,61 @@
+version: '3.0'
+services:
+  crawler:
+    container_name: crawler
+    build:
+      context: ./Micro.DDD
+      dockerfile: ./Micro.DDD.Crawler/Dockerfile
+  etl_worker:
+    container_name: etl_worker
+    build:
+      context: ./Micro.DDD
+      dockerfile: ./Micro.DDD.ETLWorker/Dockerfile
+    depends_on:
+      - crawler
+  api_gateway:
+    container_name: api_gateway
+    build:
+      context: ./Micro.DDD
+      dockerfile: ./Micro.DDD.APIGateway/Dockerfile
+    ports:
+      - '5000:5000'
+    depends_on:
+      - crawler_manager_service
+      - reporting_service
+      - messaging_service
+  crawler_manager_service:
+    container_name: crawler_manager_service
+    build:
+      context: ./Micro.DDD
+      dockerfile: ./Micro.DDD.CrawlerManagerService/Dockerfile
+    ports:
+      - '5001:5001'
+    depends_on:
+      - crawler
+  reporting_service:
+    container_name: reporting_service
+    build:
+      context: ./Micro.DDD
+      dockerfile: ./Micro.DDD.ReportingService/Dockerfile
+    ports:
+      - '5002:5002'
+    depends_on:
+      - crawler_manager_service
+  messaging_service:
+    container_name: messaging_service
+    build:
+      context: ./Micro.DDD
+      dockerfile: ./Micro.DDD.MessagingService/Dockerfile
+    ports:
+      - '5003:5003'
+    depends_on:
+      - reporting_service
+  shell_app:
+    container_name: shell_app
+    build:
+      context: ./shell-app
+      dockerfile: ./Dockerfile
+    ports:
+      - '3000:3000'
+    depends_on:
+      - api_gateway

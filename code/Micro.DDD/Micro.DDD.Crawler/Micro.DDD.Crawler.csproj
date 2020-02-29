@@ -1,0 +1,31 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <OutputType>Exe</OutputType>
+        <TargetFramework>netcoreapp3.0</TargetFramework>
+    </PropertyGroup>
+
+    <ItemGroup>
+      <PackageReference Include="EasyNetQ" Version="3.7.1" />
+      <PackageReference Include="HtmlAgilityPack" Version="1.11.17" />
+      <PackageReference Include="Microsoft.Extensions.Configuration" Version="3.1.0" />
+      <PackageReference Include="Microsoft.Extensions.Configuration.FileExtensions" Version="3.1.0" />
+      <PackageReference Include="Microsoft.Extensions.Configuration.Json" Version="3.1.0" />
+      <PackageReference Include="mongocsharpdriver" Version="2.10.0" />
+      <PackageReference Include="MongoDB.Bson" Version="2.10.0" />
+      <PackageReference Include="MongoDB.Driver" Version="2.10.0" />
+      <PackageReference Include="MongoDB.Driver.Core" Version="2.10.0" />
+      <PackageReference Include="MongoDB.Driver.GridFS" Version="2.10.0" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <None Update="appsettings.json">
+        <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      </None>
+    </ItemGroup>
+
+    <ItemGroup>
+      <ProjectReference Include="..\Micro.DDD.MQMessages\Micro.DDD.MQMessages.csproj" />
+    </ItemGroup>
+
+</Project>
