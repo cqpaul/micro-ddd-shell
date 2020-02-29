@@ -1,4 +1,4 @@
-# Micro Service Project
+# 一个基于.net core 的微服务案例
 
 说明：这是一个基于.net core 的微服务案例，前端使用的是 React。
 
